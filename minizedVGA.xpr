@@ -65,15 +65,6 @@
         <CompFileExtendedInfo CompFileName="minizedVGA.bd" FileRelPathName="ip/minizedVGA_axi_vdma_0_0/minizedVGA_axi_vdma_0_0.xci">
           <Proxy FileSetName="minizedVGA_axi_vdma_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="minizedVGA.bd" FileRelPathName="ip/minizedVGA_v_tc_0_0/minizedVGA_v_tc_0_0.xci">
-          <Proxy FileSetName="minizedVGA_v_tc_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="minizedVGA.bd" FileRelPathName="ip/minizedVGA_v_axi4s_vid_out_0_0/minizedVGA_v_axi4s_vid_out_0_0.xci">
-          <Proxy FileSetName="minizedVGA_v_axi4s_vid_out_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="minizedVGA.bd" FileRelPathName="ip/minizedVGA_processing_system7_0_0/minizedVGA_processing_system7_0_0.xci">
-          <Proxy FileSetName="minizedVGA_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="minizedVGA.bd" FileRelPathName="ip/minizedVGA_smartconnect_0_0/minizedVGA_smartconnect_0_0.xci">
           <Proxy FileSetName="minizedVGA_smartconnect_0_0"/>
         </CompFileExtendedInfo>
@@ -112,7 +103,6 @@
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/top.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
@@ -130,24 +120,6 @@
     <FileSet Name="minizedVGA_axi_vdma_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/minizedVGA_axi_vdma_0_0">
       <Config>
         <Option Name="TopModule" Val="minizedVGA_axi_vdma_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="minizedVGA_v_tc_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/minizedVGA_v_tc_0_0">
-      <Config>
-        <Option Name="TopModule" Val="minizedVGA_v_tc_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="minizedVGA_v_axi4s_vid_out_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/minizedVGA_v_axi4s_vid_out_0_0">
-      <Config>
-        <Option Name="TopModule" Val="minizedVGA_v_axi4s_vid_out_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="minizedVGA_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/minizedVGA_processing_system7_0_0">
-      <Config>
-        <Option Name="TopModule" Val="minizedVGA_processing_system7_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -213,39 +185,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="minizedVGA_axi_vdma_0_0_synth_1" Type="Ft3:Synth" SrcSet="minizedVGA_axi_vdma_0_0" Part="xc7z007sclg225-1" ConstrsSet="minizedVGA_axi_vdma_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/minizedVGA_axi_vdma_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="minizedVGA_v_tc_0_0_synth_1" Type="Ft3:Synth" SrcSet="minizedVGA_v_tc_0_0" Part="xc7z007sclg225-1" ConstrsSet="minizedVGA_v_tc_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/minizedVGA_v_tc_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="minizedVGA_v_axi4s_vid_out_0_0_synth_1" Type="Ft3:Synth" SrcSet="minizedVGA_v_axi4s_vid_out_0_0" Part="xc7z007sclg225-1" ConstrsSet="minizedVGA_v_axi4s_vid_out_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/minizedVGA_v_axi4s_vid_out_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="minizedVGA_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="minizedVGA_processing_system7_0_0" Part="xc7z007sclg225-1" ConstrsSet="minizedVGA_processing_system7_0_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/minizedVGA_processing_system7_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -331,60 +270,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="minizedVGA_axi_vdma_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg225-1" ConstrsSet="minizedVGA_axi_vdma_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="minizedVGA_axi_vdma_0_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="minizedVGA_v_tc_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg225-1" ConstrsSet="minizedVGA_v_tc_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="minizedVGA_v_tc_0_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="minizedVGA_v_axi4s_vid_out_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg225-1" ConstrsSet="minizedVGA_v_axi4s_vid_out_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="minizedVGA_v_axi4s_vid_out_0_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="minizedVGA_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg225-1" ConstrsSet="minizedVGA_processing_system7_0_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="minizedVGA_processing_system7_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
           <Desc>Default settings for Implementation.</Desc>

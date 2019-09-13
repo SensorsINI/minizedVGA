@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "top_minizedVGA_axis_subset_converter_0_0,Vivado 2018.1" *)
 (* CHECK_LICENSE_TYPE = "minizedVGA_axis_subset_converter_0_0,top_minizedVGA_axis_subset_converter_0_0,{}" *)
-(* CORE_GENERATION_INFO = "minizedVGA_axis_subset_converter_0_0,top_minizedVGA_axis_subset_converter_0_0,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axis_subset_converter,x_ipVersion=1.1,x_ipCoreRevision=16,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_S_AXIS_TDATA_WIDTH=24,C_S_AXIS_TID_WIDTH=1,C_S_AXIS_TDEST_WIDTH=1,C_S_AXIS_TUSER_WIDTH=1,C_S_AXIS_SIGNAL_SET=0b00000000000000000000000011111111,C_M_AXIS_TDATA_WIDTH=16,C_M_AXIS_TID_WIDTH=1,C_M_AXIS_TDEST_WIDTH=1,C_M_AXIS_SIGNAL_SET=\
+(* CORE_GENERATION_INFO = "minizedVGA_axis_subset_converter_0_0,top_minizedVGA_axis_subset_converter_0_0,{x_ipProduct=Vivado 2018.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axis_subset_converter,x_ipVersion=1.1,x_ipCoreRevision=16,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_S_AXIS_TDATA_WIDTH=24,C_S_AXIS_TID_WIDTH=1,C_S_AXIS_TDEST_WIDTH=1,C_S_AXIS_TUSER_WIDTH=1,C_S_AXIS_SIGNAL_SET=0b00000000000000000000000011111111,C_M_AXIS_TDATA_WIDTH=24,C_M_AXIS_TID_WIDTH=1,C_M_AXIS_TDEST_WIDTH=1,C_M_AXIS_SIGNAL_SET=\
 0b00000000000000000000000011111111,C_M_AXIS_TUSER_WIDTH=1,C_DEFAULT_TLAST=0}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module minizedVGA_axis_subset_converter_0_0 (
@@ -108,18 +108,18 @@ output wire m_axis_tvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TREADY" *)
 input wire m_axis_tready;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TDATA" *)
-output wire [15 : 0] m_axis_tdata;
+output wire [23 : 0] m_axis_tdata;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TSTRB" *)
-output wire [1 : 0] m_axis_tstrb;
+output wire [2 : 0] m_axis_tstrb;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TKEEP" *)
-output wire [1 : 0] m_axis_tkeep;
+output wire [2 : 0] m_axis_tkeep;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TLAST" *)
 output wire m_axis_tlast;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TID" *)
 output wire [0 : 0] m_axis_tid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TDEST" *)
 output wire [0 : 0] m_axis_tdest;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXIS, TDATA_NUM_BYTES 2, TDEST_WIDTH 1, TID_WIDTH 1, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN minizedVGA_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXIS, TDATA_NUM_BYTES 3, TDEST_WIDTH 1, TID_WIDTH 1, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN minizedVGA_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TUSER" *)
 output wire [0 : 0] m_axis_tuser;
 
@@ -130,7 +130,7 @@ output wire [0 : 0] m_axis_tuser;
     .C_S_AXIS_TDEST_WIDTH(1),
     .C_S_AXIS_TUSER_WIDTH(1),
     .C_S_AXIS_SIGNAL_SET('B00000000000000000000000011111111),
-    .C_M_AXIS_TDATA_WIDTH(16),
+    .C_M_AXIS_TDATA_WIDTH(24),
     .C_M_AXIS_TID_WIDTH(1),
     .C_M_AXIS_TDEST_WIDTH(1),
     .C_M_AXIS_SIGNAL_SET('B00000000000000000000000011111111),

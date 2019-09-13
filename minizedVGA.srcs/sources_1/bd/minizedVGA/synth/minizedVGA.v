@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Fri Sep 13 16:35:37 2019
+//Date        : Fri Sep 13 20:27:41 2019
 //Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 //Command     : generate_target minizedVGA.bd
 //Design      : minizedVGA
@@ -291,8 +291,7 @@ module minizedVGA
     FIXED_IO_ps_srstb,
     vid_data,
     vid_hsync,
-    vid_vsync,
-    vld_clk);
+    vid_vsync);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) inout DDR_cas_n;
@@ -317,7 +316,6 @@ module minizedVGA
   output [23:0]vid_data;
   output vid_hsync;
   output vid_vsync;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.VLD_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.VLD_CLK, CLK_DOMAIN minizedVGA_processing_system7_0_0_FCLK_CLK1, FREQ_HZ 40000000, PHASE 0.000" *) output vld_clk;
 
   wire [0:0]Net;
   wire [0:0]Net1;
@@ -388,8 +386,8 @@ module minizedVGA
   wire axi_vdma_0_M_AXI_S2MM_WREADY;
   wire [7:0]axi_vdma_0_M_AXI_S2MM_WSTRB;
   wire axi_vdma_0_M_AXI_S2MM_WVALID;
-  wire [15:0]axis_subset_converter_0_M_AXIS_TDATA;
-  wire [1:0]axis_subset_converter_0_M_AXIS_TKEEP;
+  wire [23:0]axis_subset_converter_0_M_AXIS_TDATA;
+  wire [2:0]axis_subset_converter_0_M_AXIS_TKEEP;
   wire axis_subset_converter_0_M_AXIS_TLAST;
   wire axis_subset_converter_0_M_AXIS_TREADY;
   wire [0:0]axis_subset_converter_0_M_AXIS_TUSER;
@@ -513,7 +511,6 @@ module minizedVGA
   assign vid_data[23:0] = v_axi4s_vid_out_0_vid_data;
   assign vid_hsync = v_axi4s_vid_out_0_vid_hsync;
   assign vid_vsync = v_axi4s_vid_out_0_vid_vsync;
-  assign vld_clk = processing_system7_0_FCLK_CLK2;
   minizedVGA_Const_VCC_0_0 Const_GND_0
        (.dout(Net1));
   minizedVGA_xlconstant_0_0 Const_VCC_0

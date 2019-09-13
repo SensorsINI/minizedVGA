@@ -2339,7 +2339,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>TDATA_NUM_BYTES</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXIS_S2MM.TDATA_NUM_BYTES">2</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXIS_S2MM.TDATA_NUM_BYTES">3</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -6272,7 +6272,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:c110f1e0</spirit:value>
+            <spirit:value>8:61fb4098</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6288,11 +6288,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Sep 13 10:22:56 UTC 2019</spirit:value>
+            <spirit:value>Fri Sep 13 17:25:10 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:c110f1e0</spirit:value>
+            <spirit:value>8:61fb4098</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6335,7 +6335,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:bac698bd</spirit:value>
+            <spirit:value>8:2d1de404</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6351,11 +6351,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Sep 13 10:22:57 UTC 2019</spirit:value>
+            <spirit:value>Fri Sep 13 17:25:10 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:bac698bd</spirit:value>
+            <spirit:value>8:2d1de404</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -6369,11 +6369,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Sep 13 10:29:40 UTC 2019</spirit:value>
+            <spirit:value>Fri Sep 13 17:32:16 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:c110f1e0</spirit:value>
+            <spirit:value>8:61fb4098</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -8252,7 +8252,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXIS_S2MM_TDATA_WIDTH&apos;))-1">15</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXIS_S2MM_TDATA_WIDTH&apos;))-1">23</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -8279,7 +8279,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXIS_S2MM_TDATA_WIDTH&apos;)) div 8)-1">1</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXIS_S2MM_TDATA_WIDTH&apos;)) div 8)-1">2</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -8290,7 +8290,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
-            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="(spirit::decode(id(&apos;MODELPARAM_VALUE.C_S_AXIS_S2MM_TDATA_WIDTH&apos;)) div 8){1}" spirit:bitStringLength="4">0x3</spirit:defaultValue>
+            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="(spirit::decode(id(&apos;MODELPARAM_VALUE.C_S_AXIS_S2MM_TDATA_WIDTH&apos;)) div 8){1}" spirit:bitStringLength="4">0x7</spirit:defaultValue>
           </spirit:driver>
         </spirit:wire>
         <spirit:vendorExtensions>
@@ -8626,7 +8626,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_S_AXIS_S2MM_TDATA_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXIS_S2MM_TDATA_WIDTH" spirit:minimum="8" spirit:maximum="1024" spirit:rangeType="long">16</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXIS_S2MM_TDATA_WIDTH" spirit:minimum="8" spirit:maximum="1024" spirit:rangeType="long">24</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_S_AXIS_S2MM_TUSER_BITS</spirit:name>
@@ -8803,18 +8803,6 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
       <spirit:enumeration>64</spirit:enumeration>
       <spirit:enumeration>128</spirit:enumeration>
       <spirit:enumeration>256</spirit:enumeration>
-    </spirit:choice>
-    <spirit:choice>
-      <spirit:name>choice_list_47f15fde</spirit:name>
-      <spirit:enumeration>128</spirit:enumeration>
-      <spirit:enumeration>256</spirit:enumeration>
-      <spirit:enumeration>512</spirit:enumeration>
-      <spirit:enumeration>1024</spirit:enumeration>
-      <spirit:enumeration>2048</spirit:enumeration>
-      <spirit:enumeration>4096</spirit:enumeration>
-      <spirit:enumeration>8192</spirit:enumeration>
-      <spirit:enumeration>16384</spirit:enumeration>
-      <spirit:enumeration>32768</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
       <spirit:name>choice_list_6727dfa6</spirit:name>
@@ -9443,7 +9431,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
     <spirit:parameter>
       <spirit:name>c_s_axis_s2mm_tdata_width</spirit:name>
       <spirit:displayName>Stream Data Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_s_axis_s2mm_tdata_width" spirit:choiceRef="choice_list_f012b454" spirit:order="211" spirit:configGroups="0 NoDisplay">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_s_axis_s2mm_tdata_width" spirit:choiceRef="choice_list_f012b454" spirit:order="211" spirit:configGroups="0 NoDisplay">24</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -9659,7 +9647,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
     <spirit:parameter>
       <spirit:name>c_s2mm_linebuffer_depth</spirit:name>
       <spirit:displayName>Line Buffer Depth</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_s2mm_linebuffer_depth" spirit:choiceRef="choice_list_47f15fde" spirit:order="250" spirit:configGroups="0 NoDisplay">512</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.c_s2mm_linebuffer_depth" spirit:choiceRef="choice_list_1f1af28c" spirit:order="250" spirit:configGroups="0 NoDisplay">512</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -10197,9 +10185,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE.WUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE_ACLK.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI_LITE_ACLK.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_include_s2mm" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_m_axi_s2mm_data_width" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_m_axis_mm2s_tdata_width" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_prmry_is_aclk_async" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_s2mm_genlock_mode" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.c_s_axis_s2mm_tdata_width" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>

@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Fri Sep 13 11:51:45 2019
+// Date        : Fri Sep 13 19:26:19 2019
 // Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               e:/PhD_project/vivado_prjs/minizedVGA/minizedVGA.srcs/sources_1/bd/minizedVGA/ip/minizedVGA_axis_subset_converter_0_0/minizedVGA_axis_subset_converter_0_0_sim_netlist.v
@@ -48,23 +48,23 @@ module minizedVGA_axis_subset_converter_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS TUSER" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXIS, TDATA_NUM_BYTES 3, TDEST_WIDTH 1, TID_WIDTH 1, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN minizedVGA_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef" *) input [0:0]s_axis_tuser;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TVALID" *) output m_axis_tvalid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TREADY" *) input m_axis_tready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TDATA" *) output [15:0]m_axis_tdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TSTRB" *) output [1:0]m_axis_tstrb;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TKEEP" *) output [1:0]m_axis_tkeep;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TDATA" *) output [23:0]m_axis_tdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TSTRB" *) output [2:0]m_axis_tstrb;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TKEEP" *) output [2:0]m_axis_tkeep;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TLAST" *) output m_axis_tlast;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TID" *) output [0:0]m_axis_tid;
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TDEST" *) output [0:0]m_axis_tdest;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TUSER" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXIS, TDATA_NUM_BYTES 2, TDEST_WIDTH 1, TID_WIDTH 1, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN minizedVGA_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef" *) output [0:0]m_axis_tuser;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS TUSER" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXIS, TDATA_NUM_BYTES 3, TDEST_WIDTH 1, TID_WIDTH 1, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN minizedVGA_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef" *) output [0:0]m_axis_tuser;
 
   wire aclk;
   wire aresetn;
-  wire [15:0]m_axis_tdata;
+  wire [23:0]m_axis_tdata;
   wire [0:0]m_axis_tdest;
   wire [0:0]m_axis_tid;
-  wire [1:0]m_axis_tkeep;
+  wire [2:0]m_axis_tkeep;
   wire m_axis_tlast;
   wire m_axis_tready;
-  wire [1:0]m_axis_tstrb;
+  wire [2:0]m_axis_tstrb;
   wire [0:0]m_axis_tuser;
   wire m_axis_tvalid;
   wire [23:0]s_axis_tdata;
@@ -82,7 +82,7 @@ module minizedVGA_axis_subset_converter_0_0
   (* C_DEFAULT_TLAST = "0" *) 
   (* C_FAMILY = "zynq" *) 
   (* C_M_AXIS_SIGNAL_SET = "32'b00000000000000000000000011111111" *) 
-  (* C_M_AXIS_TDATA_WIDTH = "16" *) 
+  (* C_M_AXIS_TDATA_WIDTH = "24" *) 
   (* C_M_AXIS_TDEST_WIDTH = "1" *) 
   (* C_M_AXIS_TID_WIDTH = "1" *) 
   (* C_M_AXIS_TUSER_WIDTH = "1" *) 
@@ -137,7 +137,7 @@ module minizedVGA_axis_subset_converter_0_0
 endmodule
 
 (* C_DEFAULT_TLAST = "0" *) (* C_FAMILY = "zynq" *) (* C_M_AXIS_SIGNAL_SET = "32'b00000000000000000000000011111111" *) 
-(* C_M_AXIS_TDATA_WIDTH = "16" *) (* C_M_AXIS_TDEST_WIDTH = "1" *) (* C_M_AXIS_TID_WIDTH = "1" *) 
+(* C_M_AXIS_TDATA_WIDTH = "24" *) (* C_M_AXIS_TDEST_WIDTH = "1" *) (* C_M_AXIS_TID_WIDTH = "1" *) 
 (* C_M_AXIS_TUSER_WIDTH = "1" *) (* C_S_AXIS_SIGNAL_SET = "32'b00000000000000000000000011111111" *) (* C_S_AXIS_TDATA_WIDTH = "24" *) 
 (* C_S_AXIS_TDEST_WIDTH = "1" *) (* C_S_AXIS_TID_WIDTH = "1" *) (* C_S_AXIS_TUSER_WIDTH = "1" *) 
 (* G_INDX_SS_TDATA = "1" *) (* G_INDX_SS_TDEST = "6" *) (* G_INDX_SS_TID = "5" *) 
@@ -185,9 +185,9 @@ module minizedVGA_axis_subset_converter_0_0_top_minizedVGA_axis_subset_converter
   input [0:0]s_axis_tuser;
   output m_axis_tvalid;
   input m_axis_tready;
-  output [15:0]m_axis_tdata;
-  output [1:0]m_axis_tstrb;
-  output [1:0]m_axis_tkeep;
+  output [23:0]m_axis_tdata;
+  output [2:0]m_axis_tstrb;
+  output [2:0]m_axis_tkeep;
   output m_axis_tlast;
   output [0:0]m_axis_tid;
   output [0:0]m_axis_tdest;
@@ -206,12 +206,12 @@ module minizedVGA_axis_subset_converter_0_0_top_minizedVGA_axis_subset_converter
   wire [0:0]s_axis_tuser;
   wire s_axis_tvalid;
 
-  assign m_axis_tdata[15:0] = s_axis_tdata[15:0];
+  assign m_axis_tdata[23:0] = s_axis_tdata;
   assign m_axis_tdest[0] = s_axis_tdest;
   assign m_axis_tid[0] = s_axis_tid;
-  assign m_axis_tkeep[1:0] = s_axis_tkeep[1:0];
+  assign m_axis_tkeep[2:0] = s_axis_tkeep;
   assign m_axis_tlast = s_axis_tlast;
-  assign m_axis_tstrb[1:0] = s_axis_tstrb[1:0];
+  assign m_axis_tstrb[2:0] = s_axis_tstrb;
   assign m_axis_tuser[0] = s_axis_tuser;
   assign m_axis_tvalid = s_axis_tvalid;
   assign s_axis_tready = m_axis_tready;

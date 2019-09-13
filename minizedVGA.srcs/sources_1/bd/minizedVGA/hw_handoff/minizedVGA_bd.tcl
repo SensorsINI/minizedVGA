@@ -163,10 +163,6 @@ proc create_root_design { parentCell } {
   set vid_data [ create_bd_port -dir O -from 23 -to 0 vid_data ]
   set vid_hsync [ create_bd_port -dir O vid_hsync ]
   set vid_vsync [ create_bd_port -dir O vid_vsync ]
-  set vld_clk [ create_bd_port -dir O -type clk vld_clk ]
-  set_property -dict [ list \
-   CONFIG.FREQ_HZ {40000000} \
- ] $vld_clk
 
   # Create instance: Const_GND_0, and set properties
   set Const_GND_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 Const_GND_0 ]
@@ -183,7 +179,9 @@ proc create_root_design { parentCell } {
   # Create instance: axi_vdma_0, and set properties
   set axi_vdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_vdma:6.3 axi_vdma_0 ]
   set_property -dict [ list \
+   CONFIG.c_include_s2mm {1} \
    CONFIG.c_m_axis_mm2s_tdata_width {24} \
+   CONFIG.c_s2mm_genlock_mode {2} \
  ] $axi_vdma_0
 
   # Create instance: axis_subset_converter_0, and set properties
@@ -192,7 +190,7 @@ proc create_root_design { parentCell } {
    CONFIG.M_HAS_TKEEP {1} \
    CONFIG.M_HAS_TLAST {1} \
    CONFIG.M_HAS_TSTRB {1} \
-   CONFIG.M_TDATA_NUM_BYTES {2} \
+   CONFIG.M_TDATA_NUM_BYTES {3} \
    CONFIG.M_TDEST_WIDTH {1} \
    CONFIG.M_TID_WIDTH {1} \
    CONFIG.M_TUSER_WIDTH {1} \
@@ -203,12 +201,12 @@ proc create_root_design { parentCell } {
    CONFIG.S_TDEST_WIDTH {1} \
    CONFIG.S_TID_WIDTH {1} \
    CONFIG.S_TUSER_WIDTH {1} \
-   CONFIG.TDATA_REMAP {tdata[15:0]} \
+   CONFIG.TDATA_REMAP {tdata[23:0]} \
    CONFIG.TDEST_REMAP {tdest[0:0]} \
    CONFIG.TID_REMAP {tid[0:0]} \
-   CONFIG.TKEEP_REMAP {tkeep[1:0]} \
+   CONFIG.TKEEP_REMAP {tkeep[2:0]} \
    CONFIG.TLAST_REMAP {tlast[0]} \
-   CONFIG.TSTRB_REMAP {tstrb[1:0]} \
+   CONFIG.TSTRB_REMAP {tstrb[2:0]} \
    CONFIG.TUSER_REMAP {tuser[0:0]} \
  ] $axis_subset_converter_0
 
@@ -798,7 +796,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net Net [get_bd_pins Const_VCC_0/dout] [get_bd_pins v_axi4s_vid_out_0/aclken] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_ce]
   connect_bd_net -net Net1 [get_bd_pins Const_GND_0/dout] [get_bd_pins v_axi4s_vid_out_0/fid] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_reset]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk] [get_bd_pins axi_vdma_0/s_axis_s2mm_aclk] [get_bd_pins axis_subset_converter_0/aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk] [get_bd_pins smartconnect_0/aclk] [get_bd_pins v_axi4s_vid_out_0/aclk] [get_bd_pins v_tpg_0/ap_clk]
-  connect_bd_net -net processing_system7_0_FCLK_CLK2 [get_bd_ports vld_clk] [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_clk] [get_bd_pins v_tc_0/clk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK2 [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins v_axi4s_vid_out_0/vid_io_out_clk] [get_bd_pins v_tc_0/clk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_50M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_50M_interconnect_aresetn [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axis_subset_converter_0/aresetn] [get_bd_pins rst_ps7_0_50M/interconnect_aresetn]
   connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_vdma_0/axi_resetn] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn] [get_bd_pins smartconnect_0/aresetn] [get_bd_pins v_tpg_0/ap_rst_n]

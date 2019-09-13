@@ -117,8 +117,8 @@ ENTITY minizedVGA_axi_vdma_0_0 IS
     m_axi_s2mm_bresp : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
     m_axi_s2mm_bvalid : IN STD_LOGIC;
     m_axi_s2mm_bready : OUT STD_LOGIC;
-    s_axis_s2mm_tdata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    s_axis_s2mm_tkeep : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+    s_axis_s2mm_tdata : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
+    s_axis_s2mm_tkeep : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s_axis_s2mm_tuser : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     s_axis_s2mm_tvalid : IN STD_LOGIC;
     s_axis_s2mm_tready : OUT STD_LOGIC;
@@ -286,8 +286,8 @@ ARCHITECTURE minizedVGA_axi_vdma_0_0_arch OF minizedVGA_axi_vdma_0_0 IS
       m_axi_s2mm_bvalid : IN STD_LOGIC;
       m_axi_s2mm_bready : OUT STD_LOGIC;
       s2mm_prmry_reset_out_n : OUT STD_LOGIC;
-      s_axis_s2mm_tdata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-      s_axis_s2mm_tkeep : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+      s_axis_s2mm_tdata : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
+      s_axis_s2mm_tkeep : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s_axis_s2mm_tuser : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
       s_axis_s2mm_tvalid : IN STD_LOGIC;
       s_axis_s2mm_tready : OUT STD_LOGIC;
@@ -308,7 +308,7 @@ ARCHITECTURE minizedVGA_axi_vdma_0_0_arch OF minizedVGA_axi_vdma_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF s_axis_s2mm_tvalid: SIGNAL IS "xilinx.com:interface:axis:1.0 S_AXIS_S2MM TVALID";
   ATTRIBUTE X_INTERFACE_INFO OF s_axis_s2mm_tuser: SIGNAL IS "xilinx.com:interface:axis:1.0 S_AXIS_S2MM TUSER";
   ATTRIBUTE X_INTERFACE_INFO OF s_axis_s2mm_tkeep: SIGNAL IS "xilinx.com:interface:axis:1.0 S_AXIS_S2MM TKEEP";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axis_s2mm_tdata: SIGNAL IS "XIL_INTERFACENAME S_AXIS_S2MM, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN minizedVGA_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axis_s2mm_tdata: SIGNAL IS "XIL_INTERFACENAME S_AXIS_S2MM, TDATA_NUM_BYTES 3, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN minizedVGA_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef";
   ATTRIBUTE X_INTERFACE_INFO OF s_axis_s2mm_tdata: SIGNAL IS "xilinx.com:interface:axis:1.0 S_AXIS_S2MM TDATA";
   ATTRIBUTE X_INTERFACE_INFO OF m_axi_s2mm_bready: SIGNAL IS "xilinx.com:interface:aximm:1.0 M_AXI_S2MM BREADY";
   ATTRIBUTE X_INTERFACE_INFO OF m_axi_s2mm_bvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 M_AXI_S2MM BVALID";
@@ -426,7 +426,7 @@ BEGIN
       C_S2MM_MAX_BURST_LENGTH => 8,
       C_M_AXI_S2MM_ADDR_WIDTH => 32,
       C_M_AXI_S2MM_DATA_WIDTH => 64,
-      C_S_AXIS_S2MM_TDATA_WIDTH => 16,
+      C_S_AXIS_S2MM_TDATA_WIDTH => 24,
       C_S_AXIS_S2MM_TUSER_BITS => 1,
       C_ENABLE_DEBUG_ALL => 0,
       C_ENABLE_DEBUG_INFO_0 => 0,
