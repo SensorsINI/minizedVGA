@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Fri Sep 13 12:22:46 2019
+//Date        : Fri Sep 13 15:33:51 2019
 //Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 //Command     : generate_target minizedVGA.bd
 //Design      : minizedVGA
@@ -289,7 +289,7 @@ module minizedVGA
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    vid_data_0,
+    vid_data,
     vid_hsync,
     vid_vsync);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
@@ -313,7 +313,7 @@ module minizedVGA
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK" *) inout FIXED_IO_ps_clk;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
-  output [23:0]vid_data_0;
+  output [23:0]vid_data;
   output vid_hsync;
   output vid_vsync;
 
@@ -508,7 +508,7 @@ module minizedVGA
   wire [0:0]v_tpg_0_m_axis_video_TUSER;
   wire v_tpg_0_m_axis_video_TVALID;
 
-  assign vid_data_0[23:0] = v_axi4s_vid_out_0_vid_data;
+  assign vid_data[23:0] = v_axi4s_vid_out_0_vid_data;
   assign vid_hsync = v_axi4s_vid_out_0_vid_hsync;
   assign vid_vsync = v_axi4s_vid_out_0_vid_vsync;
   minizedVGA_Const_VCC_0_0 Const_GND_0
@@ -869,7 +869,7 @@ module minizedVGA
         .S01_AXI_wstrb(axi_vdma_0_M_AXI_S2MM_WSTRB),
         .S01_AXI_wvalid(axi_vdma_0_M_AXI_S2MM_WVALID),
         .aclk(processing_system7_0_FCLK_CLK0),
-        .aresetn(1'b1));
+        .aresetn(rst_ps7_0_50M_peripheral_aresetn));
   minizedVGA_v_axi4s_vid_out_0_0 v_axi4s_vid_out_0
        (.aclk(processing_system7_0_FCLK_CLK0),
         .aclken(Net),

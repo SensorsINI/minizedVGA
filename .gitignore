@@ -90,3 +90,6 @@
 ########
 *.cache
 *.runs
+*.log
+*.jor
+*.str

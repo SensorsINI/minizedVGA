@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Fri Sep 13 12:22:46 2019
+//Date        : Fri Sep 13 15:33:51 2019
 //Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 //Command     : generate_target minizedVGA_wrapper.bd
 //Design      : minizedVGA_wrapper
@@ -31,7 +31,7 @@ module minizedVGA_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
-    vid_data_0,
+    vid_data,
     vid_hsync,
     vid_vsync);
   inout [14:0]DDR_addr;
@@ -55,7 +55,7 @@ module minizedVGA_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  output [23:0]vid_data_0;
+  output [23:0]vid_data;
   output vid_hsync;
   output vid_vsync;
 
@@ -80,7 +80,7 @@ module minizedVGA_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire [23:0]vid_data_0;
+  wire [23:0]vid_data;
   wire vid_hsync;
   wire vid_vsync;
 
@@ -106,7 +106,7 @@ module minizedVGA_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
-        .vid_data_0(vid_data_0),
+        .vid_data(vid_data),
         .vid_hsync(vid_hsync),
         .vid_vsync(vid_vsync));
 endmodule
