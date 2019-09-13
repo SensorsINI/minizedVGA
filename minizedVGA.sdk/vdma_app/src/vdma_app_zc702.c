@@ -23,7 +23,7 @@ int main()
 	int Status;
     init_platform();
 
-    print("VDMA application on ZC702 using on-board HDMI\n\r");
+    print("VDMA application on minized using PMOD VGA\n\r");
 
     //Configure the ZC702 On-board HDMI
 //    zc702_set_on_board_hdmi(&IicPs_inst);
@@ -42,7 +42,7 @@ int main()
     app_hdmi_conf_tpg(&tpg_inst, 600, 800, 0x2, XTPG_BKGND_COLOR_BARS);
 
     //Configure the moving box of the TPG
-    //app_hdmi_conf_tpg_box(&tpg_inst, 50, 1);
+    app_hdmi_conf_tpg_box(&tpg_inst, 50, 1);
 
     //Start the TPG
     XV_tpg_EnableAutoRestart(&tpg_inst);

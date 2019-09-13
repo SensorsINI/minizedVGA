@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Fri Sep 13 11:50:30 2019
+// Date        : Fri Sep 13 11:50:28 2019
 // Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               e:/PhD_project/vivado_prjs/minizedVGA/minizedVGA.srcs/sources_1/bd/minizedVGA/ip/minizedVGA_xbar_0/minizedVGA_xbar_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top minizedVGA_xbar_0 -prefix
+//               minizedVGA_xbar_0_ minizedVGA_xbar_0_stub.v
 // Design      : minizedVGA_xbar_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z007sclg225-1

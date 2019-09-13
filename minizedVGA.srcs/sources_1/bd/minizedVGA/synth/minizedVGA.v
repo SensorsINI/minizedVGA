@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-//Date        : Fri Sep 13 15:33:51 2019
+//Date        : Fri Sep 13 16:35:37 2019
 //Host        : DESKTOP-3TNSMFC running 64-bit major release  (build 9200)
 //Command     : generate_target minizedVGA.bd
 //Design      : minizedVGA
@@ -291,7 +291,8 @@ module minizedVGA
     FIXED_IO_ps_srstb,
     vid_data,
     vid_hsync,
-    vid_vsync);
+    vid_vsync,
+    vld_clk);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) inout DDR_cas_n;
@@ -316,6 +317,7 @@ module minizedVGA
   output [23:0]vid_data;
   output vid_hsync;
   output vid_vsync;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.VLD_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.VLD_CLK, CLK_DOMAIN minizedVGA_processing_system7_0_0_FCLK_CLK1, FREQ_HZ 40000000, PHASE 0.000" *) output vld_clk;
 
   wire [0:0]Net;
   wire [0:0]Net1;
@@ -408,7 +410,7 @@ module minizedVGA
   wire processing_system7_0_DDR_RESET_N;
   wire processing_system7_0_DDR_WE_N;
   wire processing_system7_0_FCLK_CLK0;
-  wire processing_system7_0_FCLK_CLK1;
+  wire processing_system7_0_FCLK_CLK2;
   wire processing_system7_0_FCLK_RESET0_N;
   wire processing_system7_0_FIXED_IO_DDR_VRN;
   wire processing_system7_0_FIXED_IO_DDR_VRP;
@@ -511,6 +513,7 @@ module minizedVGA
   assign vid_data[23:0] = v_axi4s_vid_out_0_vid_data;
   assign vid_hsync = v_axi4s_vid_out_0_vid_hsync;
   assign vid_vsync = v_axi4s_vid_out_0_vid_vsync;
+  assign vld_clk = processing_system7_0_FCLK_CLK2;
   minizedVGA_Const_VCC_0_0 Const_GND_0
        (.dout(Net1));
   minizedVGA_xlconstant_0_0 Const_VCC_0
@@ -695,7 +698,7 @@ module minizedVGA
         .DDR_VRP(FIXED_IO_ddr_vrp),
         .DDR_WEB(DDR_we_n),
         .FCLK_CLK0(processing_system7_0_FCLK_CLK0),
-        .FCLK_CLK1(processing_system7_0_FCLK_CLK1),
+        .FCLK_CLK1(processing_system7_0_FCLK_CLK2),
         .FCLK_RESET0_N(processing_system7_0_FCLK_RESET0_N),
         .GPIO_I({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .I2C0_SCL_I(1'b0),
@@ -883,7 +886,7 @@ module minizedVGA
         .vid_data(v_axi4s_vid_out_0_vid_data),
         .vid_hsync(v_axi4s_vid_out_0_vid_hsync),
         .vid_io_out_ce(Net),
-        .vid_io_out_clk(processing_system7_0_FCLK_CLK1),
+        .vid_io_out_clk(processing_system7_0_FCLK_CLK2),
         .vid_io_out_reset(Net1),
         .vid_vsync(v_axi4s_vid_out_0_vid_vsync),
         .vtg_active_video(v_tc_0_vtiming_out_ACTIVE_VIDEO),
@@ -895,7 +898,7 @@ module minizedVGA
         .vtg_vsync(v_tc_0_vtiming_out_VSYNC));
   minizedVGA_v_tc_0_0 v_tc_0
        (.active_video_out(v_tc_0_vtiming_out_ACTIVE_VIDEO),
-        .clk(processing_system7_0_FCLK_CLK1),
+        .clk(processing_system7_0_FCLK_CLK2),
         .clken(1'b1),
         .gen_clken(v_axi4s_vid_out_0_vtg_ce),
         .hblank_out(v_tc_0_vtiming_out_HBLANK),
